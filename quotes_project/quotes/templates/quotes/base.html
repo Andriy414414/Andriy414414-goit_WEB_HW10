@@ -21,10 +21,9 @@
         </div>
         <div class="col-md-4">
             <p>
-
-                <a href="/login" class="btn btn-primary">SignUp</a>
-                <a href="/login" class="btn btn-primary">Login</a>
-                <a href="/login" class="btn btn-primary">Logout</a>
+                <a class="nav-link"  href="{% url 'app_auth:logout' %}">Logout</a>
+                <a class="nav-link" href="{% url 'app_auth:signup' %}">Signup</a>
+                <a class="nav-link"  href="{% url 'app_auth:signin' %}">Login</a>
 
             </p>
         </div>
