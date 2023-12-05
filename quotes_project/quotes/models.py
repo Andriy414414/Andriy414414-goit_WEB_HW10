@@ -10,9 +10,19 @@ class Author(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.fullname
+
+    @classmethod
+    def objects(cls, fullname):
+        pass
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=30, null=False, unique=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Quote(models.Model):
@@ -20,4 +30,7 @@ class Quote(models.Model):
     tags = models.ManyToManyField(Tag)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, default=None, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.quote
 

@@ -1,8 +1,14 @@
 from pymongo import MongoClient
+from mongoengine import connect
+
+URI = "mongodb://localhost:27018"
 
 
 def get_mongodb():
-    client = MongoClient("mongodb://localhost:27018")
+    client = MongoClient(URI)
 
     db = client.qp
     return db
+
+
+
